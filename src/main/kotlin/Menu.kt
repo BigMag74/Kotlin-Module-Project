@@ -4,7 +4,8 @@ abstract class Menu  {
 
     abstract val mutableMapToShow: MutableMap<Int, () -> Unit>
     abstract var size: Int
-    abstract fun add(a: Any)
+    abstract fun add()
+    abstract fun get(index: Int): Any
     private val scanner: Scanner
         get() = Scanner(System.`in`)
 
@@ -22,12 +23,14 @@ abstract class Menu  {
             println("Ошибка ввода. Введите, пожалуйста цифру")
             return -1
         }
-        if (digit > size + 1){
+        if ((digit > size + 1) or (digit < 0)){
             println("Ошибка ввода. Пункт меню под данной цифрой отсуствует")
             return -1
         }
-
         return digit
+    }
+    fun scanName(): String{
+        return scanner.nextLine()
     }
 
 
