@@ -1,10 +1,8 @@
 fun main() {
-    val archives = Archives()
-    start(archives)
-
+    start(Archives())
 }
 
-fun<T:Menu> start(element: T) {
+fun <T : Menu> start(element: T) {
     while (true) {
         element.show(element.mutableMapToShow)
         val digit = element.scan(element.size)

@@ -1,4 +1,4 @@
-data class Note (val name: String): Menu() {
+data class Note(val name: String) : Menu() {
     var content: String = ""
     override val mutableMapToShow = mutableMapOf<Int, () -> Unit>()
 
